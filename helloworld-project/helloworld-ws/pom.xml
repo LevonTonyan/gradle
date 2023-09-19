@@ -26,7 +26,11 @@
             <version>1.7.0</version>
             <scope>test</scope>
         </dependency>
-    
+        <dependency org="org.jboss.arquillian.junit" name="arquillian-junit-container" rev="1.0.1.Final"/>
+
+    <dependency org="org.jboss.arquillian.container" name="arquillian-glassfish-embedded-3.1" rev="1.0.0.CR3"/>
+
+  <dependency org="org.glassfish.extras" name="glassfish-embedded-all" rev="3.1.1"/>   
     </dependencies>
 
     <properties>
