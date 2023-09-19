@@ -2,16 +2,16 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+   
  
-        <groupId>org.jboss.eap.quickstarts</groupId>
+        <groupId>org.ltonyan.home</groupId>
         
-        <version>7.4.0.GA</version>
+        <version>1.0.0</version>
         
    
     <artifactId>helloworld-ws</artifactId>
     <packaging>war</packaging>
-    <name>${qs.name.prefix} helloworld-ws</name>
+    <name> helloworld-ws</name>
     <description>This project demonstrates a Hello World JAX-WS web service</description>
 
     <licenses>
