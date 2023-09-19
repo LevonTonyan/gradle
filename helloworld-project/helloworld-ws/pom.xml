@@ -13,7 +13,15 @@
     <packaging>war</packaging>
     <name> helloworld-ws</name>
     <description>This project demonstrates a Hello World JAX-WS web service</description>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
+    
+    </dependencies>
 
     <properties>
         <remote.server.url>http://localhost:8080/</remote.server.url>
