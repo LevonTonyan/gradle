@@ -45,6 +45,13 @@
             <version>1.0.0.Final</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-core</artifactId>
+            <version>1.7.1.Final</version>
+        </dependency>
+
             </dependencies>
 
     <properties>
