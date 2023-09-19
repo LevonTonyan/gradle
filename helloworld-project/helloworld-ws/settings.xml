@@ -1,0 +1,63 @@
+
+<settings>
+  <mirrors>
+    <mirror>
+      <id>jboss-developer-repository-group</id>
+      <mirrorOf>*,!jboss-deprecated</mirrorOf>
+      <name>JBoss.org Developer Repository Group</name>
+      <url>https://repository.jboss.org/nexus/content/groups/developer/</url>
+    </mirror>
+  </mirrors>
+  <profiles>
+    <!-- Redefine the Maven central repository to enable snapshots.  The url will be replaced by the mirror -->
+    <profile>
+      <id>jboss-nexus</id>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <name>Central repository proxy</name>
+          <url>replaced by mirror settings</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <url>replaced by mirror settings</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+    <profile>
+      <id>jboss-deprecated</id>
+      <repositories>
+        <repository>
+          <id>jboss-deprecated</id>
+          <name>JBoss Deprecated</name>
+          <url>https://repository.jboss.org/nexus/content/repositories/deprecated/</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>jboss-nexus</activePro
