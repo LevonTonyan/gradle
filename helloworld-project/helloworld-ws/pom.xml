@@ -16,12 +16,7 @@
     
 
     <dependencies>
-        <dependency>
-            <groupId>javax.jws</groupId>
-            <artifactId>jsr181</artifactId>
-            <version>1.0</version>
-          
-        </dependency>
+     
         <dependency>
             <groupId>sun-jaxws</groupId>
             <artifactId>jsr181-api</artifactId>
