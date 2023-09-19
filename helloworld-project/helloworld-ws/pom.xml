@@ -13,6 +13,14 @@
     <packaging>war</packaging>
     <name> helloworld-ws</name>
     <description>This project demonstrates a Hello World JAX-WS web service</description>
+        <plugin>            
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+            <webXml>src\main\webapp\WEB-INF\web.xml</webXml>        
+        </configuration>
+        </plugin>
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
