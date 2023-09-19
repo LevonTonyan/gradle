@@ -43,7 +43,7 @@
     </properties>
 
     <dependencies>
-   <dependencies>
+   
 
             <!-- Add H2 dependency for embedded testing database -->
             <dependency>
