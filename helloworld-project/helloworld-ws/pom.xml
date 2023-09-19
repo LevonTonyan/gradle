@@ -26,12 +26,26 @@
             <version>1.7.0</version>
             <scope>test</scope>
         </dependency>
-        <dependency org="org.jboss.arquillian.junit" name="arquillian-junit-container" rev="1.0.1.Final"/>
-
-    <dependency org="org.jboss.arquillian.container" name="arquillian-glassfish-embedded-3.1" rev="1.0.0.CR3"/>
-
-  <dependency org="org.glassfish.extras" name="glassfish-embedded-all" rev="3.1.1"/>   
-    </dependencies>
+            <dependency>
+            <groupId>org.jboss.arquillian</groupId>
+            <artifactId>arquillian-bom</artifactId>
+            <version>1.1.13.Final</version>
+            <scope>import</scope>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.main.extras</groupId>
+            <artifactId>glassfish-embedded-all</artifactId>
+            <version>4.1.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.arquillian.container</groupId>
+            <artifactId>arquillian-glassfish-embedded-3.1</artifactId>
+            <version>1.0.0.Final</version>
+            <scope>test</scope>
+        </dependency>
+            </dependencies>
 
     <properties>
         <remote.server.url>http://localhost:8080/</remote.server.url>
