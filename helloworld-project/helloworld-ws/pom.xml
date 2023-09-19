@@ -21,6 +21,7 @@
             <groupId>sun-jaxws</groupId>
             <artifactId>jsr181-api</artifactId>
             <version>1.0</version>
+             <scope>import</scope>
         </dependency>
        
         <dependency>
