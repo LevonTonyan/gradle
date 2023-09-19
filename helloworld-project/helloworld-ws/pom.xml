@@ -72,12 +72,12 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>${version.org.apache.commons.commons-lang3}</version>
+                <version>3.13.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
-                <version>${httpclient.version}</version>
+                
             </dependency>
             <!-- JBoss distributes a complete set of Java EE APIs including a Bill
                 of Materials (BOM). A BOM specifies the versions of a "stack" (or a collection)
@@ -88,7 +88,7 @@
             <dependency>
                 <groupId>org.jboss.bom</groupId>
                 <artifactId>jboss-eap-javaee7-with-tools</artifactId>
-                <version>${version.server.bom}</version>
+                
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -103,7 +103,7 @@
             <dependency>
                 <groupId>org.jboss.spec</groupId>
                 <artifactId>jboss-javaee-7.0</artifactId>
-                <version>${version.jboss.spec.javaee.7.0}</version>
+               
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
