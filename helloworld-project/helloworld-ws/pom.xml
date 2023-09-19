@@ -51,12 +51,7 @@
                 <artifactId>h2</artifactId>
                 <version>2.2.224</version>
             </dependency>
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>2.5.0.redhat-2</version>
-                <scope>compile</scope>
-            </dependency>
+           
      
             <dependency>
                 <groupId>commons-logging</groupId>
@@ -124,7 +119,11 @@
         </dependency>
 
         <!-- Test dependencies -->
-      
+         <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
     
 
         <!-- Import the Common Annotations API (JSR-250), we use provided
