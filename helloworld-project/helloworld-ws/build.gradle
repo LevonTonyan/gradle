@@ -50,7 +50,7 @@ task printCurrentDirectory {
 
 task runJarAndArchive(type: Exec) {
     dependsOn build
-     doLast {
+       doLast {
         // Step 1: Run the JAR and save the output to a log file
         def command = "java -jar build/libs/helloworld-ws-1.0.0.jar > build/output.log 2>&1"
         def output = new ByteArrayOutputStream()
@@ -66,10 +66,14 @@ task runJarAndArchive(type: Exec) {
             commandLine 'sh', '-c', tarballCommand
         }
 
-        // Step 3: Attach the tarball and log file to the build artifacts
-        artifacts {
-            archives file(tarballName)
-            archives file('build/output.log')
+        // Step 3: Attach the tarball and log file as custom artifacts
+        publishing {
+            publications {
+                customArtifacts(MavenPublication) {
+                    artifact tarballName
+                    artifact 'build/output.log'
+                }
+            }
         }
     }
 }
