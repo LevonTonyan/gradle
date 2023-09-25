@@ -22,9 +22,12 @@ jar {
 }
 
 repositories {
-	mavenCentral()
-   	google()
-     maven { url "https://repo.maven.apache.org/maven2" }
+	mavenCentral() // You can add this if it's not already there
+    maven { url 'https://repo.maven.apache.org/maven2' } // Maven Central Repository
+    maven { url 'https://plugins.gradle.org/m2/' } // Gradle Plugin Portal (for plugins)
+    maven { url 'https://repo.jenkins-ci.org/releases/' } // Jenkins releases repository
+    // Add the JUnit Jupiter repository
+    maven { url 'https://repo.maven.apache.org/maven2/org/junit/jupiter/' }
 }
 dependencies {
     implementation group: 'javax.jws', name: 'jsr181-api', version: '1.0-MR1'
