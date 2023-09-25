@@ -50,8 +50,7 @@ task printCurrentDirectory {
 
 task runJarAndArchive(type: Exec) {
     dependsOn build
-	commandLine 'ls -la'
-    commandLine 'java', '-jar', 'helloworld-ws/build/libs/helloworld-ws-1.0.0.jar'
+    commandLine 'java', '-jar', 'build/libs/helloworld-ws-1.0.0.jar'
 
     // Redirect the output to 'output.log'
     standardOutput = new FileOutputStream('output.log')
@@ -59,7 +58,7 @@ task runJarAndArchive(type: Exec) {
     doLast {
         // Create a TAR.GZ archive that includes the JAR file
         ant.tar(destfile: "hello-${project.version}.tar.gz") {
-            from("helloworld-ws/build/libs/helloworld-ws-1.0.0.jar")
+            from("build/libs/helloworld-ws-1.0.0.jar")
         }
         
         // Archive both the TAR.GZ file and the output log
