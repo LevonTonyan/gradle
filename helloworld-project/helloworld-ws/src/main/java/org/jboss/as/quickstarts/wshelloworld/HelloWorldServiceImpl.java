@@ -30,6 +30,10 @@ import javax.jws.WebService;
     targetNamespace = "http://www.jboss.org/eap/quickstarts/wshelloworld/HelloWorld")
 public class HelloWorldServiceImpl implements HelloWorldService {
 
+	////////main////////////////
+	public static void main(String[] args){
+	System.out.println("Hello world");
+}
     @Override
     public String sayHello() {
         return "Hello World!";

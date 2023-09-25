@@ -1,0 +1,63 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'org.ltonyan.home'
+version = '1.0.0'
+
+description = """helloworld-ws"""
+
+
+sourceCompatibility = 7
+targetCompatibility = 1.7
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+
+jar {
+          manifest {
+                attributes 'Main-Class': 'org.jboss.as.quickstarts.wshelloworld.HelloWorldServiceImpl'
+        }
+}
+
+repositories {
+        
+     maven { url "https://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'javax.jws', name: 'jsr181-api', version:'1.0-MR1'
+    compile group: 'org.jboss.arquillian.junit', name: 'arquillian-junit-core', version:'1.7.1.Final'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version:'5.10.0'
+    testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version:'1.7.0'
+    testCompile group: 'org.glassfish.main.extras', name: 'glassfish-embedded-all', version:'4.1.2'
+    testCompile group: 'org.jboss.arquillian.container', name: 'arquillian-glassfish-embedded-3.1', version:'1.0.0.Final'
+    compileOnly group: 'org.jboss.arquillian', name: 'arquillian-bom', version:'1.1.13.Final'
+}
+
+
+
+
+
+
+
+// Define your custom tasks
+task buildCustom(dependsOn: ['clean', 'compileJava', 'testCustom', 'jar']) {
+    description 'Builds the project with custom tasks'
+}
+
+task testCustom(dependsOn: 'build') {
+    description 'Runs custom tests'
+}
+
+task hello(dependsOn: 'testCustom') {
+    description 'Custom hello task'
+    doLast {
+        println 'Hello, custom task!'
+    }
+}
+
+
+
+
+
