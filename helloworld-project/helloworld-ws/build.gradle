@@ -41,6 +41,13 @@ task testCustom(dependsOn: 'build') {
     description 'Runs custom tests'
 }
 
+task printCurrentDirectory {
+    doLast {
+        def currentDirectory = project.projectDir
+        println "Current directory: $currentDirectory"
+    }
+}
+
 task runJarAndArchive(type: Exec) {
     dependsOn build
 	commandLine 'ls -la'
