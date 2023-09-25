@@ -43,7 +43,7 @@ task testCustom(dependsOn: 'build') {
 
 task runJarAndArchive(type: Exec) {
     dependsOn build
-
+	commandLine 'ls -la'
     commandLine 'java', '-jar', 'helloworld-ws/build/libs/helloworld-ws-1.0.0.jar'
 
     // Redirect the output to 'output.log'
