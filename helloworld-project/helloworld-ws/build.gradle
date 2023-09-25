@@ -50,21 +50,19 @@ task printCurrentDirectory {
 
 task runJarAndArchive(type: Exec) {
     dependsOn build
-    commandLine 'java', '-jar', 'build/libs/helloworld-ws-1.0.0.jar'
+     def buildNumber = project.findProperty('BUILD_NUMBER') ?: 'default'
+    def artifactName = "hello-$buildNumber.tar.gz"
 
-    // Redirect the output to 'output.log'
-    standardOutput = new FileOutputStream('output.log')
+    commandLine 'java', '-jar', 'build/libs/helloworld-ws-1.0.0.jarr'
+    standardOutput = new File('output.log')
+    errorOutput = new File('output.log')
 
     doLast {
-        // Create a TAR.GZ archive that includes the JAR file
-        ant.tar(destfile: "hello-${project.version}.tar.gz") {
-            from("build/libs/helloworld-ws-1.0.0.jar")
+        exec {
+            commandLine 'tar', '-czvf', artifactName, 'build/libs/helloworld-ws-1.0.0.jar'
         }
-        
-        // Archive both the TAR.GZ file and the output log
-        archiveArtifacts {
-            artifacts("hello-${project.version}.tar.gz")
-            artifacts("output.log")
+        exec {
+            commandLine 'cp', 'output.log', '/path/to/build/logs/' // Replace with the actual path
         }
     }
 }
