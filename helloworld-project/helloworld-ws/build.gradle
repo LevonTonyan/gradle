@@ -53,7 +53,7 @@ task runJarAndArchive(type: Exec) {
      def buildNumber = project.findProperty('BUILD_NUMBER') ?: 'default'
     def artifactName = "hello-$buildNumber.tar.gz"
 
-    commandLine 'java', '-jar', 'build/libs/helloworld-ws-1.0.0.jarr'
+    commandLine 'java', '-jar', 'build/libs/helloworld-ws-1.0.0.jar'
     standardOutput = new File('output.log')
     errorOutput = new File('output.log')
 
